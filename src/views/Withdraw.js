@@ -32,7 +32,7 @@ const Withdraw = () => {
       await contract.methods
         .withdraw()
         .send({
-          from: "0x60156A5D89b3761DF7f65d5A84A4F117B9597957",
+          from: address[0],
           value: "0",
         })
         .then((res) => {
