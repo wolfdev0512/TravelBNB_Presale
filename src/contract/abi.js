@@ -1,5 +1,3 @@
-import { AbiItem } from "web3-utils";
-
 export const travelABI = [
   { inputs: [], stateMutability: "nonpayable", type: "constructor" },
   {
