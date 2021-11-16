@@ -27,13 +27,13 @@ const Withdraw = () => {
 
       const contract = new web3.eth.Contract(
         travelABI,
-        "0x60156A5D89b3761DF7f65d5A84A4F117B9597957",
-        {
-          from: address[0],
-          gasPrice: "20000000000",
-        }
+        "0x60156A5D89b3761DF7f65d5A84A4F117B9597957"
       );
-      const data = await contract.methods.withdraw().call();
+      const data = await contract.methods.withdraw().send({
+        from: address[0],
+        value: "0",
+      });
+      console.log(data);
     }
   };
   const getBalance = async () => {
