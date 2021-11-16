@@ -16,18 +16,18 @@ const Withdraw = () => {
     }
     initWeb3();
   }, []);
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     getBalance();
-  //   }, 1000);
-  // });
+  useEffect(() => {
+    setInterval(() => {
+      getBalance();
+    }, 1000);
+  });
   const onWithdraw = async () => {
     if (web3) {
       const address = await web3.eth.getAccounts();
 
       const contract = new web3.eth.Contract(
         travelABI,
-        "0x83c1a3E6F2B0B05736e149cFf7934B0F31715bF4"
+        "0x17b56F2AcBde866651718dF9B67d4F4f806fbc70"
       );
       await contract.methods
         .withdraw()
@@ -48,18 +48,18 @@ const Withdraw = () => {
       const address = await web3.eth.getAccounts();
       const contract = new web3.eth.Contract(
         travelABI,
-        "0x60156A5D89b3761DF7f65d5A84A4F117B9597957"
+        "0x17b56F2AcBde866651718dF9B67d4F4f806fbc70"
       );
       const data = await contract.methods
         .getCurrentBNBAmount()
         .call()
         .then((res) => {
-          console.log(res);
+          console.log("res" + res);
         })
         .catch((err) => {
-          console.log(err.message.response);
+          console.log("err" + err.message.response);
         });
-      console.log(data);
+      console.log("data" + data);
     }
   };
   return (
