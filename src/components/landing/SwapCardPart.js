@@ -11,6 +11,7 @@ import buyImg from "../../assets/buy.svg";
 import { travelABI } from "../../contract/abi";
 import { ToastContainer, toast } from "react-toastify";
 import Web3 from "../../context/web3";
+import { FooterPartDiv, CopyBtn } from "./StyledLanding";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Copybtn from "../../assets/copy.svg";
 const SwapCardPart = () => {
@@ -91,10 +92,22 @@ const SwapCardPart = () => {
         BUY TravelBNB
       </BuyBtn>
       <CardDesc>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-        purus sit amet luctus venenatis, lectus magna fringilla
+        You can also buy tokens by sending BNB directly from your wallet to
+        presale address.
       </CardDesc>
-
+      <div>
+        <FooterPartDiv>
+          <div>PRESALE ADDRESS: 0xC2919C37De3645e17986C5B7da0482f8A4cA30e8</div>
+          <CopyToClipboard text="0xC2919C37De3645e17986C5B7da0482f8A4cA30e8">
+            <CopyBtn>
+              <div>
+                <img src={Copybtn} alt="Copybtn" />
+              </div>
+              Copy Address
+            </CopyBtn>
+          </CopyToClipboard>
+        </FooterPartDiv>
+      </div>
       <ToastContainer />
     </SwapCardPartDiv>
   );

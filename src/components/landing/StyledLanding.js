@@ -245,7 +245,7 @@ export const BuyBtn = styled.div`
   }
   div {
     width: 50px;
-    height: 20px;
+    height: 50px;
     background-color: #ffffff50;
     border-radius: 50%;
     display: flex;
@@ -258,7 +258,7 @@ export const BuyBtn = styled.div`
   justify-content: center;
   align-items: center;
   border: 3px solid #efe1e1;
-  padding: 14px 25px;
+  padding: 10px 25px;
   border-radius: 30px;
   grid-gap: 30px;
   background: #f7931e;
@@ -279,7 +279,7 @@ export const CardDesc = styled.div`
   text-align: center;
   transition: 0.2s linear;
   @media screen and (max-width: 768px) {
-    font-size: 26px;
+    font-size: 20px;
     transition: 0.2s linear;
   }
   @media screen and (max-width: 425px) {
@@ -295,15 +295,16 @@ export const FooterPartDiv = styled.div`
   align-items: center;
   grid-gap: 19px;
   margin: auto;
+  margin-top: 10px;
   div {
-    font-size: 26px;
+    font-size: 20px;
     text-align: center;
-    color: #eeeeee;
+
     word-break: break-all;
   }
   @media screen and (max-width: 768px) {
     div {
-      font-size: 22px;
+      font-size: 20px;
     }
   }
   @media screen and (max-width: 425px) {

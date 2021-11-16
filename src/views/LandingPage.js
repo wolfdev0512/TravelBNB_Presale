@@ -1,4 +1,4 @@
-import FooterPart from "../components/landing/FooterPart";
+// import FooterPart from "../components/landing/FooterPart";
 import HeaderTextPart from "../components/landing/HeaderTextPart";
 import { LandingDiv } from "../components/landing/StyledLanding";
 import SwapCardPart from "../components/landing/SwapCardPart";
@@ -9,7 +9,7 @@ const LandingPage = () => {
     <LandingDiv>
       <HeaderTextPart />
       <SwapCardPart />
-      <FooterPart />
+      {/* <FooterPart /> */}
     </LandingDiv>
   );
 };
