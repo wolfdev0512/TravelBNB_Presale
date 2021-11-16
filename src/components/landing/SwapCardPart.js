@@ -39,7 +39,6 @@ const SwapCardPart = () => {
           travelABI,
           "0x95dCc60cDf89F47f36e44277Ef0f807372b55f0c"
         );
-        var number = new BN(10);
 
         console.log(
           web3.utils.BN(
