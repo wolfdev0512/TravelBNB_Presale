@@ -16,11 +16,11 @@ const Withdraw = () => {
     }
     initWeb3();
   }, []);
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     getBalance();
-  //   }, 1000);
-  // });
+  useEffect(() => {
+    setInterval(() => {
+      getBalance();
+    }, 1000);
+  });
   const onWithdraw = async () => {
     if (web3) {
       const address = await web3.eth.getAccounts();
