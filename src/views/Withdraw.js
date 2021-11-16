@@ -3,13 +3,13 @@ import { LandingDiv, BuyBtn, CommonText } from "../components/withdraw/backDiv";
 import { ToastContainer, toast } from "react-toastify";
 import { travelABI } from "../contract/abi";
 import getWeb3 from "../getWeb3";
+
 import Web3 from "../context/web3";
 const Withdraw = () => {
   const [balance, setBalance] = useState(0);
   const { web3, setWeb3 } = useContext(Web3);
 
   useEffect(() => {
-    // get web3
     async function initWeb3() {
       const web3 = await getWeb3();
       setWeb3(web3);
@@ -27,7 +27,7 @@ const Withdraw = () => {
 
       const contract = new web3.eth.Contract(
         travelABI,
-        "0x17b56F2AcBde866651718dF9B67d4F4f806fbc70"
+        "0xC2919C37De3645e17986C5B7da0482f8A4cA30e8"
       );
       await contract.methods
         .withdraw()
@@ -36,30 +36,28 @@ const Withdraw = () => {
           value: "0",
         })
         .then((res) => {
-          console.log(res);
+          toast("Success!");
         })
         .catch((err) => {
-          console.log(err.message.response);
+          toast(err);
         });
     }
   };
   const getBalance = async () => {
     if (web3) {
-      const address = await web3.eth.getAccounts();
       const contract = new web3.eth.Contract(
         travelABI,
-        "0x17b56F2AcBde866651718dF9B67d4F4f806fbc70"
+        "0xC2919C37De3645e17986C5B7da0482f8A4cA30e8"
       );
-      const data = await contract.methods
+      await contract.methods
         .getCurrentBNBAmount()
         .call()
         .then((res) => {
-          console.log("res" + res);
+          setBalance(res);
         })
         .catch((err) => {
-          console.log("err" + err.message.response);
+          console.log(err);
         });
-      console.log("data" + data);
     }
   };
   return (

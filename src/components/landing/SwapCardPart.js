@@ -8,7 +8,6 @@ import {
   SwapCardPartDiv,
 } from "./StyledLanding";
 import buyImg from "../../assets/buy.svg";
-import { BigNumber } from "bignumber.js";
 import { travelABI } from "../../contract/abi";
 import { ToastContainer, toast } from "react-toastify";
 import Web3 from "../../context/web3";
@@ -29,30 +28,31 @@ const SwapCardPart = () => {
     if (cntBNB <= 0 || isNaN(cntBNB)) {
       toast("Please check BNB Balance!");
     }
-    if (travelBNB <= 0 || isNaN(travelBNB)) {
-      toast("Please check BNB Balance!");
+    if (cntBNB < 0.1 && cntBNB > 0) {
+      toast("Min balance is 0.1");
+    }
+    if (cntBNB > 5) {
+      toast("Max balance is 5");
     }
 
-    if (cntBNB >= 0.1 || !isNaN(cntBNB)) {
+    if (cntBNB >= 0.1 && cntBNB <= 5) {
       if (web3) {
         const contract = new web3.eth.Contract(
           travelABI,
-          "0x05c026741441d9AB021486c051Ebb8b761DbeF2D"
+          "0xC2919C37De3645e17986C5B7da0482f8A4cA30e8"
         );
-
         const address = await web3.eth.getAccounts();
-        console.log(address[0]);
-        const data = await contract.methods
-          .preSale("1500000000000000000000")
+        await contract.methods
+          .preSale(await web3.utils.toWei(travelBNB.toString(), "ether"))
           .send({
             from: address[0],
-            value: "1000000000000000000",
+            value: await web3.utils.toWei(cntBNB.toString(), "ether"),
           })
           .on("receipt", function (receipt) {
-            console.log(receipt);
+            toast("Success!");
           })
           .on("error", function (error) {
-            console.log(error);
+            toast(error);
           });
       }
     }
