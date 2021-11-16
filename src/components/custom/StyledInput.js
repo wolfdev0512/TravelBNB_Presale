@@ -10,11 +10,10 @@ export const InputFieldDiv = styled.div`
 `;
 
 export const InputDiv = styled.div`
-  height: 64px;
+  height: 55px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  grid-gap: 15px;
   width: calc(100% - 150px);
 `;
 

@@ -58,11 +58,6 @@ const HeaderTextPart = () => {
           MIN BUY: 0.1 BNB / MAX BUY: 5 BNB (+GAS FEE)
         </div>
       </HeaderResponsiveTitle>
-      <HeaderDescDiv>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-        purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor
-        rhoncus dolor purus non enim
-      </HeaderDescDiv>
     </HeaderTextPartDiv>
   );
 };
