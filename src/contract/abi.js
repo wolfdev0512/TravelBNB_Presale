@@ -1,6 +1,6 @@
 import { AbiItem } from "web3-utils";
 
-export const travelABI: AbiItem[] = [
+export const travelABI = [
   {
     inputs: [
       { internalType: "contract IERC20", name: "addr", type: "address" },
