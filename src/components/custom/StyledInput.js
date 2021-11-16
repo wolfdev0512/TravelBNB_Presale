@@ -20,7 +20,7 @@ export const InputDiv = styled.div`
 
 export const BtnDiv = styled.div`
   width: 150px;
-  height: 35px !important;
+  height: 50px !important;
   display: flex;
   justify-content: center;
   align-items: center;

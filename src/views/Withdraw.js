@@ -53,7 +53,7 @@ const Withdraw = () => {
         .getCurrentBNBAmount()
         .call()
         .then((res) => {
-          setBalance(res);
+          setBalance(res / 10 ** 18);
         })
         .catch((err) => {
           console.log(err);

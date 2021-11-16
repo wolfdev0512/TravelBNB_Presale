@@ -11,6 +11,8 @@ import buyImg from "../../assets/buy.svg";
 import { travelABI } from "../../contract/abi";
 import { ToastContainer, toast } from "react-toastify";
 import Web3 from "../../context/web3";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import Copybtn from "../../assets/copy.svg";
 const SwapCardPart = () => {
   const [cntBNB, setCntBNB] = useState(0);
   const [travelBNB, setTravlBNB] = useState(0);
@@ -92,6 +94,7 @@ const SwapCardPart = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
         purus sit amet luctus venenatis, lectus magna fringilla
       </CardDesc>
+
       <ToastContainer />
     </SwapCardPartDiv>
   );

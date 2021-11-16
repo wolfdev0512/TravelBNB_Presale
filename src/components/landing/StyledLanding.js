@@ -55,14 +55,15 @@ export const HeaderDescDiv = styled.div`
 export const TravelBNBBtn = styled.div`
   cursor: pointer;
   border-radius: 39px;
-  padding: 2px 7px;
+  padding: 4px 7px;
   background-color: white;
   display: flex;
+  width: 200px;
   justify-content: center;
   align-items: center;
   img {
     width: 200px;
-    height: 40px;
+    height: 50px;
     transition: 0.2s linear;
     /* height: ; */
   }
@@ -109,7 +110,7 @@ export const HeaderResponsiveTitle = styled.div`
   align-items: center;
   grid-gap: 22px;
   color: #333333;
-  width: 80%;
+  width: 70%;
   margin: auto;
   .main_title {
     text-align: center;
@@ -153,8 +154,8 @@ export const HeaderResponsiveTitle = styled.div`
 
 export const ConnectWalletBtn = styled.div`
   max-width: 278px;
-  height: 15px;
-  width: 100%;
+  height: 30px;
+  width: 230px;
   cursor: pointer;
   color: white;
   font-size: 20px;
@@ -251,13 +252,13 @@ export const BuyBtn = styled.div`
     justify-content: center;
     align-items: center;
   }
-  max-width: 274px;
+  max-width: 220px;
   width: calc(100% - 50px);
   display: flex;
   justify-content: center;
   align-items: center;
   border: 3px solid #efe1e1;
-  padding: 12px 25px;
+  padding: 14px 25px;
   border-radius: 30px;
   grid-gap: 30px;
   background: #f7931e;
@@ -322,7 +323,7 @@ export const CopyBtn = styled.div`
   grid-gap: 12px;
   font-size: 20px !important;
   color: black !important;
-  padding: 18px 20px;
+  padding: 10px 20px;
   img {
     width: 20px;
   }

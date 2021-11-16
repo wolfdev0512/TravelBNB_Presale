@@ -36,7 +36,7 @@ const HeaderTextPart = () => {
         <HeaderTitle>
           <div className="main_title">Buy TravelBNB</div>
           <div className="sub_title">
-            MIN: ~0.05 BNB / MAX: ~5 BNB (+GAS BNB / BEP20)
+            MIN BUY: 0.1 BNB / MAX BUY: 5 BNB (+GAS FEE)
           </div>
         </HeaderTitle>
         <ConnectWalletBtn>
@@ -55,7 +55,7 @@ const HeaderTextPart = () => {
       <HeaderResponsiveTitle>
         <div className="main_title">Buy TravelBNB</div>
         <div className="sub_title">
-          MIN: ~0.05 BNB / MAX: ~5 BNB (+GAS BNB / BEP20)
+          MIN BUY: 0.1 BNB / MAX BUY: 5 BNB (+GAS FEE)
         </div>
       </HeaderResponsiveTitle>
       <HeaderDescDiv>
