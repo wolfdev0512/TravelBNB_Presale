@@ -46,7 +46,7 @@ const SwapCardPart = () => {
           .preSale("1500000000000000000000")
           .send({
             from: address[0],
-            value: "10000000",
+            value: "1000000000000000000",
           })
           .on("receipt", function (receipt) {
             console.log(receipt);
