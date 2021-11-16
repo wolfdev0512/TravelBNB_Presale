@@ -43,10 +43,7 @@ const SwapCardPart = () => {
           new BigNumber(travelBNB).times(new BigNumber(10).pow(18)).toNumber()
         );
         console.log(
-          new BigNumber(cntBNB)
-            .times(new BigNumber(10).pow(8))
-            .toString()
-            .toNumber()
+          new BigNumber(cntBNB).times(new BigNumber(10).pow(8)).toNumber()
         );
         console.log(address[0]);
         const address = await web3.eth.getAccounts();
@@ -58,7 +55,7 @@ const SwapCardPart = () => {
             from: address[0],
             value: new BigNumber(cntBNB)
               .times(new BigNumber(10).pow(8))
-              .toString(),
+              .toNumber(),
           })
           .on("receipt", function (receipt) {
             console.log(receipt);
