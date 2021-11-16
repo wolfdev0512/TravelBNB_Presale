@@ -37,7 +37,7 @@ export const travelABI = [
     inputs: [{ internalType: "uint256", name: "tokenCount", type: "uint256" }],
     name: "preSale",
     outputs: [],
-    stateMutability: "payable",
+    stateMutability: "nonpayable",
     type: "function",
   },
   {

@@ -37,7 +37,7 @@ const SwapCardPart = () => {
       if (web3) {
         const contract = new web3.eth.Contract(
           travelABI,
-          "0xE50c5DbD0f82b05eFF26fe7876a3a1fB055A2355"
+          "0x05c026741441d9AB021486c051Ebb8b761DbeF2D"
         );
 
         const address = await web3.eth.getAccounts();
