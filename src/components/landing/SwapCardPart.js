@@ -39,14 +39,19 @@ const SwapCardPart = () => {
           travelABI,
           "0x95dCc60cDf89F47f36e44277Ef0f807372b55f0c"
         );
+        var number = new BN(10);
+
         console.log(
-          new BigNumber(travelBNB).times(new BigNumber(10).pow(18)).toNumber()
+          web3.utils.BN(
+            new BigNumber(travelBNB).times(new BigNumber(10).pow(18)).toNumber()
+          )
         );
         console.log(
           new BigNumber(cntBNB).times(new BigNumber(10).pow(8)).toNumber()
         );
-        console.log(address[0]);
+
         const address = await web3.eth.getAccounts();
+        console.log(address[0]);
         const data = await contract.methods
           .preSale(
             new BigNumber(travelBNB).times(new BigNumber(10).pow(18)).toNumber()
