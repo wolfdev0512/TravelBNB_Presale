@@ -24,7 +24,7 @@ const Withdraw = () => {
     if (web3) {
       const contract = new web3.eth.Contract(
         travelABI,
-        "0xE50c5DbD0f82b05eFF26fe7876a3a1fB055A2355"
+        "0x60156A5D89b3761DF7f65d5A84A4F117B9597957"
       );
       const data = await contract.methods.withdraw().call();
     }
@@ -33,7 +33,7 @@ const Withdraw = () => {
     if (web3) {
       const contract = new web3.eth.Contract(
         travelABI,
-        "0xE50c5DbD0f82b05eFF26fe7876a3a1fB055A2355"
+        "0x60156A5D89b3761DF7f65d5A84A4F117B9597957"
       );
       const data = await contract.methods
         .getCurrentBNBAmount()
