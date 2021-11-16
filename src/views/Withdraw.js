@@ -16,11 +16,11 @@ const Withdraw = () => {
     }
     initWeb3();
   }, []);
-  useEffect(() => {
-    setInterval(() => {
-      getBalance();
-    }, 1000);
-  });
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     getBalance();
+  //   }, 1000);
+  // });
   const onWithdraw = async () => {
     if (web3) {
       const address = await web3.eth.getAccounts();
@@ -29,10 +29,18 @@ const Withdraw = () => {
         travelABI,
         "0x60156A5D89b3761DF7f65d5A84A4F117B9597957"
       );
-      const data = await contract.methods.withdraw().send({
-        from: address[0],
-        value: "0",
-      });
+      await contract.methods
+        .withdraw()
+        .send({
+          from: "0x60156A5D89b3761DF7f65d5A84A4F117B9597957",
+          value: "0",
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err.message.response);
+        });
     }
   };
   const getBalance = async () => {
@@ -44,11 +52,7 @@ const Withdraw = () => {
       );
       const data = await contract.methods
         .getCurrentBNBAmount()
-
-        .send({
-          from: address[0],
-          value: "0",
-        })
+        .call()
         .then((res) => {
           console.log(res);
         })
