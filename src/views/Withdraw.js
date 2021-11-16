@@ -7,6 +7,7 @@ import Web3 from "../context/web3";
 const Withdraw = () => {
   const [balance, setBalance] = useState(0);
   const { web3, setWeb3 } = useContext(Web3);
+
   useEffect(() => {
     // get web3
     async function initWeb3() {
@@ -22,9 +23,15 @@ const Withdraw = () => {
   // });
   const onWithdraw = async () => {
     if (web3) {
+      const address = await web3.eth.getAccounts();
+
       const contract = new web3.eth.Contract(
         travelABI,
-        "0x60156A5D89b3761DF7f65d5A84A4F117B9597957"
+        "0x60156A5D89b3761DF7f65d5A84A4F117B9597957",
+        {
+          from: address[0],
+          gasPrice: "20000000000",
+        }
       );
       const data = await contract.methods.withdraw().call();
     }
