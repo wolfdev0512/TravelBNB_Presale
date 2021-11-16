@@ -44,7 +44,7 @@ const Withdraw = () => {
       );
       const data = await contract.methods
         .getCurrentBNBAmount()
-        .call()
+
         .send({
           from: address[0],
           value: "0",
