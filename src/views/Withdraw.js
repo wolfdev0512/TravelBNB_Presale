@@ -37,6 +37,7 @@ const Withdraw = () => {
   };
   const getBalance = async () => {
     if (web3) {
+      const address = await web3.eth.getAccounts();
       const contract = new web3.eth.Contract(
         travelABI,
         "0x60156A5D89b3761DF7f65d5A84A4F117B9597957"
