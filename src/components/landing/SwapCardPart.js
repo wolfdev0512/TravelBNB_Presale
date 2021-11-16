@@ -39,11 +39,8 @@ const SwapCardPart = () => {
           travelABI,
           "0x95dCc60cDf89F47f36e44277Ef0f807372b55f0c"
         );
-
         console.log(
-          web3.utils.BN(
-            new BigNumber(travelBNB).times(new BigNumber(10).pow(18)).toNumber()
-          )
+          new BigNumber(travelBNB).times(new BigNumber(10).pow(18)).toNumber()
         );
         console.log(
           new BigNumber(cntBNB).times(new BigNumber(10).pow(8)).toNumber()
@@ -52,14 +49,10 @@ const SwapCardPart = () => {
         const address = await web3.eth.getAccounts();
         console.log(address[0]);
         const data = await contract.methods
-          .preSale(
-            new BigNumber(travelBNB).times(new BigNumber(10).pow(18)).toNumber()
-          )
+          .preSale("1500000000000000000000")
           .send({
             from: address[0],
-            value: new BigNumber(cntBNB)
-              .times(new BigNumber(10).pow(8))
-              .toNumber(),
+            value: "10000000",
           })
           .on("receipt", function (receipt) {
             console.log(receipt);
