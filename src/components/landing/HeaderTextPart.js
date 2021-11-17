@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import {
   ConnectWalletBtn,
-  HeaderDescDiv,
   HeaderResponsiveTitle,
   HeaderTextPartDiv,
   HeaderTitle,
@@ -26,7 +25,12 @@ const HeaderTextPart = () => {
     }
     initWeb3();
   }, []);
-
+  const onWalletConnect = async () => {
+    const web3 = await getWeb3();
+    setWeb3(web3);
+    const accounts = await web3.eth.getAccounts();
+    setUserAccount(accounts[0]);
+  };
   return (
     <HeaderTextPartDiv>
       <HeaderTitleDiv>
@@ -39,7 +43,11 @@ const HeaderTextPart = () => {
             MIN BUY: 0.1 BNB / MAX BUY: 5 BNB (+GAS FEE)
           </div>
         </HeaderTitle>
-        <ConnectWalletBtn>
+        <ConnectWalletBtn
+          onClick={() => {
+            onWalletConnect();
+          }}
+        >
           <div>
             <img src={metaImg} alt="metaImg" />
           </div>

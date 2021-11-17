@@ -1,4 +1,4 @@
-import LandingImg from "../../assets/landing.png";
+import LandingImg from "../../assets/background.svg";
 import styled from "styled-components";
 export const LandingDiv = styled.div`
   display: flex;
