@@ -97,8 +97,8 @@ const SwapCardPart = () => {
       </CardDesc>
       <div>
         <FooterPartDiv>
-          <div>PRESALE ADDRESS: 0xC2919C37De3645e17986C5B7da0482f8A4cA30e8</div>
-          <CopyToClipboard text="0xC2919C37De3645e17986C5B7da0482f8A4cA30e8">
+          <div>PRESALE ADDRESS: 0x8B2290D4F5983297B1dfECC4D408e7D69BC4E709</div>
+          <CopyToClipboard text="0x8B2290D4F5983297B1dfECC4D408e7D69BC4E709">
             <CopyBtn>
               <div>
                 <img src={Copybtn} alt="Copybtn" />
